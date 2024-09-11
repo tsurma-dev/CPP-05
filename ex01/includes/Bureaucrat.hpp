@@ -6,7 +6,7 @@
 /*   By: tsurma <tsurma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:24:48 by tsurma            #+#    #+#             */
-/*   Updated: 2024/09/11 15:30:36 by tsurma           ###   ########.fr       */
+/*   Updated: 2024/09/11 16:48:12 by tsurma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define BUREAUCRAT_HPP_
 
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 private:
@@ -35,6 +38,9 @@ public:
 	// grade incr and decr functions
 	void incrGrade( void );
 	void decrGrade( void );
+
+	//Actions
+	void signForm( Form& form );
 
 	//Exceptions
   class GradeTooHighException : public std::exception {

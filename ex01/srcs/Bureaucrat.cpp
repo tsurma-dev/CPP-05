@@ -6,11 +6,11 @@
 /*   By: tsurma <tsurma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:36:22 by tsurma            #+#    #+#             */
-/*   Updated: 2024/09/11 17:03:50 by tsurma           ###   ########.fr       */
+/*   Updated: 2024/09/11 17:03:46 by tsurma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp"
 #include <exception>
 
 Bureaucrat::Bureaucrat() {}
@@ -58,6 +58,16 @@ void Bureaucrat::decrGrade(void) {
 		throw Bureaucrat::GradeTooLowException();
 	}
 	this->_grade++;
+}
+
+void Bureaucrat::signForm( Form& form ) {
+	try {
+		form.beSigned(*this);
+	} catch (std::exception& e) {
+		std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		return ;
+	}
+	std::cout << this->_name << " signed " << form.Form::getName() << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, Bureaucrat& other) {
