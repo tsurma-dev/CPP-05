@@ -6,7 +6,7 @@
 #    By: tsurma <tsurma@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/11 13:21:30 by tsurma            #+#    #+#              #
-#    Updated: 2024/09/11 18:32:03 by tsurma           ###   ########.fr        #
+#    Updated: 2024/09/13 14:34:16 by tsurma           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,9 @@ MAKEFLAGS = --no-print-directory
 SRC =	srcs/main.cpp\
 		srcs/Bureaucrat.cpp\
 		srcs/AForm.cpp\
-		srcs/ShrubberyCreationForm.cpp
+		srcs/ShrubberyCreationForm.cpp\
+		srcs/RobotomyRequestForm.cpp\
+		srcs/PresidentialPardonForm.cpp
 
 
 OBJ = $(SRC:.cpp=.o)

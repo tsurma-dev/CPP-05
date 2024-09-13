@@ -6,7 +6,7 @@
 /*   By: tsurma <tsurma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:36:22 by tsurma            #+#    #+#             */
-/*   Updated: 2024/09/11 17:19:34 by tsurma           ###   ########.fr       */
+/*   Updated: 2024/09/13 14:45:13 by tsurma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Bureaucrat::Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
-	std::cout << "Bereaucrat\t" << _name << "\twith grade\t" << _grade << " created" << std::endl;
+	std::cout << "\033[34mBureaucrat\t" << _name << "\twith grade\t" << _grade << " created\033[0m" << std::endl;
 	if (_grade > 155)
 		throw Bureaucrat::GradeTooLowException();
 	if (_grade < 1)
@@ -35,7 +35,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 }
 
 Bureaucrat::~Bureaucrat() {
-	std::cout << "Bureaucrat\t" << _name << " destructed" << std::endl;
+	std::cout << "\033[34mBureaucrat\t" << _name << " destructed\033[0m" << std::endl;
 }
 
 std::string Bureaucrat::getName(void) const {
@@ -64,14 +64,26 @@ void Bureaucrat::signForm( AForm& form ) {
 	try {
 		form.beSigned(*this);
 	} catch (std::exception& e) {
-		std::cout << this->_name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+		std::cout << this->_name << "\tcouldn't sign " << form.getName() << " because " << e.what() << std::endl;
 		return ;
 	}
-	std::cout << this->_name << " signed " << form.getName() << std::endl;
+	std::cout << this->_name << "\tsigned " << form.getName() << std::endl;
 }
 
+void Bureaucrat::excecuteForm(AForm const& form) {
+	try {
+		form.execute(*this);
+	} catch (std::exception& e) {
+		std::cout << this->_name << "\tcouldn't execute " << form.getName() << " because " << e.what() << std::endl;
+		return ;
+	}
+	std::cout << this->_name << "\texecuted " << form.getName() << std::endl;
+}
+
+
 std::ostream& operator<<(std::ostream& os, Bureaucrat& other) {
-	return (os << other.getName() << ", bureaucrat grade " << other.getGrade() << ".");
+  return (os << other.getName() << ", bureaucrat grade " << other.getGrade()
+             << ".");
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {

@@ -6,7 +6,7 @@
 /*   By: tsurma <tsurma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:36:22 by tsurma            #+#    #+#             */
-/*   Updated: 2024/09/11 17:03:46 by tsurma           ###   ########.fr       */
+/*   Updated: 2024/09/13 13:12:55 by tsurma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 Bureaucrat::Bureaucrat() {}
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
-	std::cout << "Bereaucrat\t" << _name << "\twith grade\t" << _grade << " created" << std::endl;
+	std::cout << "Bureaucrat\t" << _name << "\twith grade\t" << _grade << " created" << std::endl;
 	if (_grade > 155)
 		throw Bureaucrat::GradeTooLowException();
 	if (_grade < 1)

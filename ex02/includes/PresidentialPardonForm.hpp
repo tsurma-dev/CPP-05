@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsurma <tsurma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 17:21:17 by tsurma            #+#    #+#             */
-/*   Updated: 2024/09/13 13:59:40 by tsurma           ###   ########.fr       */
+/*   Created: 2024/09/13 14:31:05 by tsurma            #+#    #+#             */
+/*   Updated: 2024/09/13 14:31:44 by tsurma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERY_HPP_
-#define SHRUBBERY_HPP_
+#ifndef PARDON_HPP_
+#define PARDON_HPP_
 
 #include <iostream>
-#include <fstream>
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class PresidentialPardonForm : public AForm {
 private:
-	ShrubberyCreationForm();
+	PresidentialPardonForm();
 	//Executing
 	void process( void ) const;
 public:
 	//orthodox canonical form
-	ShrubberyCreationForm( std::string target );
-	ShrubberyCreationForm( ShrubberyCreationForm& other );
-	ShrubberyCreationForm& operator=(ShrubberyCreationForm& other);
-	~ShrubberyCreationForm();
+	PresidentialPardonForm( std::string target );
+	PresidentialPardonForm( PresidentialPardonForm& other );
+	PresidentialPardonForm& operator=(PresidentialPardonForm& other);
+	~PresidentialPardonForm();
 };
 
 #endif

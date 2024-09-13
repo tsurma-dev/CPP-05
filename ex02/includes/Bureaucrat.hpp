@@ -6,7 +6,7 @@
 /*   By: tsurma <tsurma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 12:24:48 by tsurma            #+#    #+#             */
-/*   Updated: 2024/09/11 17:19:08 by tsurma           ###   ########.fr       */
+/*   Updated: 2024/09/13 12:49:05 by tsurma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ public:
 
 	//Actions
 	void signForm( AForm& form );
+	void excecuteForm( AForm const & form);
 
 	//Exceptions
   class GradeTooHighException : public std::exception {

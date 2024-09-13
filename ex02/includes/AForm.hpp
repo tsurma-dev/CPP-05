@@ -6,7 +6,7 @@
 /*   By: tsurma <tsurma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 14:32:56 by tsurma            #+#    #+#             */
-/*   Updated: 2024/09/11 18:34:17 by tsurma           ###   ########.fr       */
+/*   Updated: 2024/09/13 13:50:41 by tsurma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,11 @@ private:
 	virtual void process() const = 0;
 protected:
 	std::string	_target;
+	//Setter functions
+	void setName( const std::string name);
+	void setSigned( const bool sign );
+	void setReqGradeSign( const int grade );
+	void setReqGradeExec( const int grade );
 public:
 	//orthodox canonical Form
 	AForm( std::string name, int sign, int exec );
@@ -41,9 +46,9 @@ public:
 	int getRequiredGradeSign( void ) const;
 	int getRequiredGradeExec( void ) const;
 
-	//Signing
-	void beSigned( Bureaucrat& signer);
-	void execute(Bureaucrat const & executor) const;
+	//Actions
+	void beSigned( Bureaucrat& signer );
+	void execute( Bureaucrat const & executor ) const;
 
 	//Exceptions
   class GradeTooHighException : public std::exception {

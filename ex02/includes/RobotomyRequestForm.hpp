@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsurma <tsurma@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 17:21:17 by tsurma            #+#    #+#             */
-/*   Updated: 2024/09/13 13:59:40 by tsurma           ###   ########.fr       */
+/*   Created: 2024/09/13 14:00:02 by tsurma            #+#    #+#             */
+/*   Updated: 2024/09/13 14:01:16 by tsurma           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERY_HPP_
-#define SHRUBBERY_HPP_
+#ifndef ROBOTOMY_HPP_
+#define ROBOTOMY_HPP_
 
 #include <iostream>
-#include <fstream>
 #include "AForm.hpp"
 
-class ShrubberyCreationForm : public AForm {
+class RobotomyRequestForm : public AForm {
 private:
-	ShrubberyCreationForm();
+	RobotomyRequestForm();
 	//Executing
 	void process( void ) const;
 public:
 	//orthodox canonical form
-	ShrubberyCreationForm( std::string target );
-	ShrubberyCreationForm( ShrubberyCreationForm& other );
-	ShrubberyCreationForm& operator=(ShrubberyCreationForm& other);
-	~ShrubberyCreationForm();
+	RobotomyRequestForm( std::string target );
+	RobotomyRequestForm( RobotomyRequestForm& other );
+	RobotomyRequestForm& operator=(RobotomyRequestForm& other);
+	~RobotomyRequestForm();
 };
 
 #endif
